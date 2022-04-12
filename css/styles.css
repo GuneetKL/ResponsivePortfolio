@@ -1,0 +1,216 @@
+@charset "utf-8";
+
+/* || Global Layout Set-up  */
+* {
+    box-sizing: border-box;
+}
+/* || Typography  */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;    /* || These three above rules make the whole page a flexbox (necessary to make sticky footer as well :) ===================== */
+    font: lighter 19px/1.4 Source Sans Pro, sans-serif;
+    color:rgb(52, 52, 52);
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.3em;
+}
+h1 {
+    font-weight: 600;
+    font-size: 42px;
+    color: #4A1C45;
+}
+h2 {
+    font-weight: 600;
+    font-size: 30px;
+}
+h3 {
+    font-size: 32px;
+    font-weight: 500;
+}
+p {
+    font-weight: 100;
+    font-size: 21px;
+    padding: 0 2em 0;
+}
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+    color: #4A1C45;
+}
+#intro {
+    color: #4A1C45;
+    padding: 0;
+}
+footer {
+    color: #4A1C45;
+}
+/* || Main Styles ===================== */
+main {
+    padding-bottom: 2em;
+    margin: 1em;
+    flex: 1;  /* || This makes it a sticky footer (ASK TRIS: What do you call a sticky footer that does go over the main content? ===================== */
+}
+img {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+.dp {
+    max-width: 200px;
+}
+header {
+    background: #FFDD47;
+    margin: 0;
+    width: 100%;
+}
+.button {
+    background-color: rgb(255, 255, 255);
+    padding: 6px;
+    margin: 1vw 3vw;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: 700;
+}
+#top {
+    margin: 40px;
+}
+footer {
+    padding: 20px 0;
+    background-color: #f7d647;
+}
+.contact-me-now {
+    font-weight: 500;
+}
+footer a {
+    color: #4A1C45;
+    font-weight: 500;
+    font-size: 20px;
+}
+a {
+    text-decoration: none;
+}
+.below-footer {
+    border-top: thin solid #4A1C459E;
+    padding: 0.5em 0;
+    margin: 0 1em;
+}
+.name-footer {
+    float: left;
+}
+.back-footer {
+    float: right;
+}
+#home-footer, #portfolio-footer, #contact-footer {
+    display: none;
+}
+h2 {
+    padding: 1em 0;
+}
+/* || Media Queries responsive layout changes */
+@media (min-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .wrapper {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        align-items: flex-start;
+    }
+    #intro {
+        font-size: 22px;    
+        text-align: left;
+    }
+    .dp {
+        order: 1;
+        min-width: 300px;
+    }
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    h1 {
+        margin-top: 1.5em;
+    }
+
+    .button {
+        background: none;
+        font-size: 21px;
+        padding:0;
+    }
+    .articles {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 2vw;
+    }
+    .portfolio {
+        max-width: 50%;
+        flex-wrap: wrap;
+        padding-bottom: 1em;
+    }
+    img {
+        padding: 1vw;
+    }
+    .interested, .contact-me-now{
+        font-size: 22px;
+        margin-bottom: 2em;
+    }
+    #home-footer, #portfolio-footer, #contact-footer, #skills-footer {
+        display: inline;
+    }
+    .below-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+    .below-footer a{
+        font-weight: 700;
+        padding: 0 1em;
+    }
+    .name-footer {
+        flex: 1;
+        text-align: left;
+        padding: 0;
+    }
+    .back-footer {
+        display: none;
+    }
+    .interested {
+        padding: 0 5em;
+        margin-bottom: 0;
+    }
+    #email {
+        padding: 0;
+        margin-bottom: 3em;
+    }
+}
+
+@media (min-width: 1024px) {
+    h1 {
+        padding: 0;
+        display: block;
+    }
+    .button {
+        margin: 0 0 0 0.5em;
+    }
+    .top-header { 
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }   
+    .dp {
+        min-width: 34%;
+    }
+    .portfolio {
+        width: 33%;
+        margin: 0 auto;    
+    }
+}
+/* My problem was .nav was flex-grow:1 and that was making it weird */
+    
